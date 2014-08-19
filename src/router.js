@@ -1,7 +1,8 @@
 var express = require('express');
 var path = __dirname + '/controllers';
 var controllers = {
-	authenticateController: require(path + '/authenticateController')
+	authenticateController: require(path + '/authenticateController'),
+	calendarController: require(path + '/calendarController')
 };
 
 module.exports = function(app) {
@@ -13,6 +14,9 @@ module.exports = function(app) {
 	//Authenticated routes
 	unAuthenticatedRouter.get('/authenticate', controllers.authenticateController.authenticate);
 	unAuthenticatedRouter.get('/authenticate/callback', controllers.authenticateController.authenticateCallback);
+
+	//Authenticated routes
+	authenticatedRouter.get('/calendars', controllers.calendarController.getCalendars);
 
 	app.use('/api', unAuthenticatedRouter);
 	app.use('/api', authenticatedRouter);

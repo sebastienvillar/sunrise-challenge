@@ -4,6 +4,8 @@ var request = require('request');
 var endPoints = {
 	oauth: 'https://accounts.google.com/o/oauth2/auth',
 	token: 'https://accounts.google.com/o/oauth2/token',
+	calendarList: 'https://www.googleapis.com/calendar/v3/users/me/calendarList',
+	colors: 'https://www.googleapis.com/calendar/v3/colors'
 };
 
 exports.authenticationPath = function() {
@@ -41,4 +43,22 @@ exports.tokenFromCode = function(code, callback) {
 		else
 			callback(null, JSON.parse(body));
 	});	
+};
+
+exports.calendars = function(token, callback) {
+	request.get({'url': endPoints.calendarList, 'qs': {'access_token': token}}, function(err, res, body) {
+		if (err || res.statusCode != 200)
+			callback(err);
+		else
+			callback(null, JSON.parse(body));
+	});
+};
+
+exports.colors = function(token, callback) {
+	request.get({'url': endPoints.colors, 'qs': {'access_token': token}}, function(err, res, body) {
+		if (err || res.statusCode != 200) 
+			callback(err);
+		else
+			callback(null, JSON.parse(body));
+	});
 };
