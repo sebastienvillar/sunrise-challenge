@@ -1,0 +1,14 @@
+{
+  "name": "sunrise-challenge",
+  "private": true,
+  "dependencies": {
+    "express": "4.8.x",
+    "request": "2.40.x",
+    "async": "0.9.x",
+    "mocha": "1.21.x",
+    "should": "4.0.x"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
