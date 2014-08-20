@@ -17,6 +17,7 @@ module.exports = function(app) {
 
 	//Authenticated routes
 	authenticatedRouter.get('/calendars', controllers.calendarController.getCalendars);
+	authenticatedRouter.get('/calendars/:id/events', controllers.calendarController.getCalendarEvents);
 
 	app.use('/api', unAuthenticatedRouter);
 	app.use('/api', authenticatedRouter);
