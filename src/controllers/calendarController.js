@@ -11,7 +11,7 @@ function formatCalendars(data) {
 			title: calendar.summary,
 			writable: /owner|writer/.test(calendar.accessRole),
 			selected: calendar.selected ? calendar.selected : false,
-			timezone: calendar.timeZone ? calendar.timeZone : 'Unknown',
+			timezone: calendar.timeZone ? calendar.timeZone : 'unknown',
 			color: data.colors.calendar[calendar.colorId].background.substring(1)
 		}
 		results.push(result);
@@ -25,20 +25,20 @@ function formatCalendarEvents(data) {
 		var event = data.events.items[key];
 		var result = {
 			id: event.id,
-			status: event.status ? event.status : 'Unknown',
+			status: event.status ? event.status : 'unknown',
 			title: event.summary,
 			start: {
 				dateTime: event.start.dateTime,
-				timezone: event.start.timeZone ? event.start.timeZone : 'Unknown'
+				timezone: event.start.timeZone ? event.start.timeZone : 'unknown'
 			},
 			end: {
 				dateTime: event.end.dateTime,
-				timezone: event.end.timeZone ? event.end.timeZone : 'Unknown'
+				timezone: event.end.timeZone ? event.end.timeZone : 'unknown'
 			},
-			location: event.location ? event.location : "Unknown",
+			location: event.location ? event.location : "unknown",
 			editable: /owner|writer/.test(data.events.accessRole),
 			organizer: {
-				name: event.organizer.displayName ? event.organizer.displayName : 'Unknown',
+				name: event.organizer.displayName ? event.organizer.displayName : 'unknown',
 				emails: event.organizer.email ? [event.organizer.email] : [],
 				self: event.organizer.self
 			}
@@ -55,7 +55,7 @@ function formatCalendarEvents(data) {
 			}
 
 			if (!result.recurrence)
-				result.recurrence = 'None';
+				result.recurrence = 'none';
 		}
 
 		result.attendees = [];
@@ -63,9 +63,10 @@ function formatCalendarEvents(data) {
 			for (var key in event.attendees) {
 				var attendee = event.attendees[key];
 				var attendeeResult = {
-					name: attendee.displayName ? attendee.displayName : 'Unknown',
+					name: attendee.displayName ? attendee.displayName : 'unknown',
 					emails: attendee.email ? [attendee.email] : [],
-					self: attendee.self
+					self: attendee.self,
+					rsvpStatus: attendee.responseStatus === "accepted" ? "attending" : "not attending"
 				};
 				result.attendees.push(attendeeResult);
 			}
@@ -73,7 +74,7 @@ function formatCalendarEvents(data) {
 
 		results.push(result);
 	}
-	return result;
+	return results;
 };
 
 exports.getCalendars = function(req, res, next) {

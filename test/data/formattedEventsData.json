@@ -1,0 +1,76 @@
+[
+  {
+    "id": "id1",
+    "status": "confirmed",
+    "title": "summary1",
+    "start": {
+      "dateTime": "2007-08-09T10:57:00-08:00",
+      "timezone": "startTimeZone1"
+    },
+    "end": {
+      "dateTime": "2008-08-09T10:57:00-08:00",
+      "timezone": "endTimeZone1"
+    },
+    "location": "location1",
+    "attendees": [
+      {
+        "name": "attendeeDisplayName1",
+        "emails": [
+          "attendeeEmail1"
+        ],
+        "self": true,
+        "rsvpStatus": "attending"
+      },
+      {
+        "name": "attendeeDisplayName12",
+        "emails": [
+          "attendeeEmail12"
+        ],
+        "self": false,
+        "rsvpStatus": "not attending"
+      }
+    ],
+    "organizer": {
+      "name": "organizerDisplayName1",
+      "emails": [
+        "organizerEmail1"
+      ],
+      "self": true
+    },
+    "editable": true,
+    "recurrence": "FREQ=WEEKLY"
+  },
+  {
+    "id": "id2",
+    "status": "cancelled",
+    "title": "summary2",
+    "start": {
+      "dateTime": "2007-08-09T10:57:00-08:00",
+      "timezone": "startTimeZone2"
+    },
+    "end": {
+      "dateTime": "2008-08-09T10:57:00-08:00",
+      "timezone": "endTimeZone2"
+    },
+    "location": "location2",
+    "attendees": [
+      {
+        "name": "attendeeDisplayName2",
+        "emails": [
+          "attendeeEmail2"
+        ],
+        "self": true,
+        "rsvpStatus": "attending"
+      }
+    ],
+    "organizer": {
+      "name": "organizerDisplayName2",
+      "emails": [
+        "organizerEmail2"
+      ],
+      "self": true
+    },
+    "editable": true,
+    "recurrence": "FREQ=MONTHLY"
+  }
+]

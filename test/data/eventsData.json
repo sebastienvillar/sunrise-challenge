@@ -1,0 +1,160 @@
+{
+  "kind": "calendar#events",
+  "etag": "etag",
+  "summary": "summary",
+  "description": "description",
+  "updated": "2005-08-09T10:57:00-08:00",
+  "timeZone": "timeZone",
+  "accessRole": "owner",
+  "nextPageToken": "nextPageToken",
+  "nextSyncToken": "nextSyncToken",
+  "defaultReminders": [
+    {
+      "method": "email",
+      "minutes": 30
+    }
+  ],
+  "items": [
+    {
+      "kind": "calendar#event",
+      "etag": "etag1",
+      "id": "id1",
+      "status": "confirmed",
+      "htmlLink": "htmlLink1",
+      "created": "2005-08-09T10:57:00-08:00",
+      "updated": "2006-08-09T10:57:00-08:00",
+      "summary": "summary1",
+      "description": "description1",
+      "location": "location1",
+      "creator": {
+        "id": "creatorId1",
+        "email": "creatorEmail1",
+        "displayName": "creatorDisplayName1",
+        "self": false
+      },
+      "organizer": {
+        "id": "organizerId1",
+        "email": "organizerEmail1",
+        "displayName": "organizerDisplayName1",
+        "self": true
+      },
+      "start": {
+        "date": "date",
+        "dateTime": "2007-08-09T10:57:00-08:00",
+        "timeZone": "startTimeZone1"
+      },
+      "end": {
+        "date": "date",
+        "dateTime": "2008-08-09T10:57:00-08:00",
+        "timeZone": "endTimeZone1"
+      },
+      "endTimeUnspecified": false,
+      "recurrence": [
+        "RRULE:FREQ=WEEKLY;"
+      ],
+      "recurringEventId": "recurringEventId1",
+      "originalStartTime": {
+        "date": "date",
+        "dateTime": "2009-08-09T10:57:00-08:00",
+        "timeZone": "originalStartTimeTimeZone1"
+      },
+      "iCalUID": 0,
+      "sequence": 0,
+      "attendees": [
+        {
+          "id": "attendeeId1",
+          "email": "attendeeEmail1",
+          "displayName": "attendeeDisplayName1",
+          "self": true,
+          "responseStatus": "accepted"
+        },
+        {
+          "id": "attendeeId12",
+          "email": "attendeeEmail12",
+          "displayName": "attendeeDisplayName12",
+          "self": false,
+          "responseStatus": "declined"
+        }
+      ],
+      "extendedProperties": {
+        "private": {},
+        "shared": {}
+      },
+      "guestsCanInviteOthers": true,
+      "guestsCanModify": true,
+      "guestsCanSeeOtherGuests": true,
+      "privateCopy": false,
+      "locked": false,
+      "reminders": {
+        "useDefault": true
+      }
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "etag2",
+      "id": "id2",
+      "status": "cancelled",
+      "htmlLink": "htmlLink2",
+      "created": "2005-08-09T10:57:00-08:00",
+      "updated": "2006-08-09T10:57:00-08:00",
+      "summary": "summary2",
+      "description": "description2",
+      "location": "location2",
+      "creator": {
+        "id": "creatorId2",
+        "email": "creatorEmail2",
+        "displayName": "creatorDisplayName2",
+        "self": true
+      },
+      "organizer": {
+        "id": "organizerId2",
+        "email": "organizerEmail2",
+        "displayName": "organizerDisplayName2",
+        "self": true
+      },
+      "start": {
+        "date": "date",
+        "dateTime": "2007-08-09T10:57:00-08:00",
+        "timeZone": "startTimeZone2"
+      },
+      "end": {
+        "date": "date",
+        "dateTime": "2008-08-09T10:57:00-08:00",
+        "timeZone": "endTimeZone2"
+      },
+      "endTimeUnspecified": false,
+      "recurrence": [
+        "RRULE:FREQ=MONTHLY;BYDAY=TU"
+      ],
+      "recurringEventId": "recurringEventId2",
+      "originalStartTime": {
+        "date": "date",
+        "dateTime": "2009-08-09T10:57:00-08:00",
+        "timeZone": "originalStartTimeTimeZone2"
+      },
+      "iCalUID": 1,
+      "sequence": 1,
+      "attendees": [
+        {
+          "id": "attendeeId2",
+          "email": "attendeeEmail2",
+          "displayName": "attendeeDisplayName2",
+          "self": true,
+          "responseStatus": "accepted"
+        }
+      ],
+      "extendedProperties": {
+        "private": {},
+        "shared": {}
+      },
+      "guestsCanInviteOthers": false,
+      "guestsCanModify": false,
+      "guestsCanSeeOtherGuests": false,
+      "privateCopy": false,
+      "locked": false,
+      "reminders": {
+        "useDefault": true
+      }
+    }
+  ]
+}

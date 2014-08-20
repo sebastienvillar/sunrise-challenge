@@ -6,7 +6,8 @@ var endPoints = {
 	token: 'https://accounts.google.com/o/oauth2/token',
 	calendarList: 'https://www.googleapis.com/calendar/v3/users/me/calendarList',
 	colors: 'https://www.googleapis.com/calendar/v3/colors',
-	events: 'https://www.googleapis.com/calendar/v3/calendars/:id/events'
+	events: 'https://www.googleapis.com/calendar/v3/calendars/:id/events',
+	tokenInfo: 'https://www.googleapis.com/oauth2/v1/tokeninfo'
 };
 
 exports.authenticationPath = function() {
@@ -31,11 +32,11 @@ exports.authenticationPath = function() {
 
 exports.tokenFromCode = function(code, callback) {
 	var form = {
-		'code': code,
-		'client_id': config.google.clientId,
-		'client_secret': config.google.clientSecret,
-		'redirect_uri': config.google.redirectUri,
-		'grant_type': 'authorization_code'
+		code: code,
+		client_id: config.google.clientId,
+		client_secret: config.google.clientSecret,
+		redirect_uri: config.google.redirectUri,
+		grant_type: 'authorization_code'
 	};
 
 	request.post({url: endPoints.token, form: form}, function(err, res, body) {
@@ -46,8 +47,17 @@ exports.tokenFromCode = function(code, callback) {
 	});	
 };
 
+exports.isTokenValid = function(token, callback) {
+	request.post({url: endPoints.tokenInfo, qs: {'access_token': token}}, function(err, res, body) {
+		if (err || res.statusCode != 200)
+			callback(err ? err : JSON.parse(body).error);
+		else
+			callback(null, JSON.parse(body)['expires_in'] > 10);
+	});	
+};
+
 exports.calendars = function(token, callback) {
-	request.get({'url': endPoints.calendarList, 'qs': {'access_token': token}}, function(err, res, body) {
+	request.get({url: endPoints.calendarList, qs: {'access_token': token}}, function(err, res, body) {
 		if (err || res.statusCode != 200)
 			callback(err ? err : JSON.parse(body).error);
 		else
@@ -56,7 +66,7 @@ exports.calendars = function(token, callback) {
 };
 
 exports.colors = function(token, callback) {
-	request.get({'url': endPoints.colors, 'qs': {'access_token': token}}, function(err, res, body) {
+	request.get({url: endPoints.colors, qs: {'access_token': token}}, function(err, res, body) {
 		if (err || res.statusCode != 200) 
 			callback(err ? err : JSON.parse(body).error);
 		else
@@ -65,7 +75,7 @@ exports.colors = function(token, callback) {
 };
 
 exports.eventsForCalendarId = function(token, calendarId, callback) {
-	request.get({'url': endPoints.events.replace(":id", calendarId), 'qs': {'access_token': token}}, function(err, res, body) {
+	request.get({url: endPoints.events.replace(':id', calendarId), 'qs': {'access_token': token}}, function(err, res, body) {
 		if (err || res.statusCode != 200)
 			callback(err ? err : JSON.parse(body).error);
 		else
