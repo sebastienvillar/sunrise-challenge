@@ -1,0 +1,24 @@
+{
+  "kind": "calendar#colors",
+  "updated": "2005-08-09T10:57:00-08:00",
+  "calendar": {
+    "0": {
+      "background": "#ab21c3",
+      "foreground": "#ca31c2"
+    },
+    "1": {
+      "background": "#da31c3",
+      "foreground": "#ef31c2"
+    }
+  },
+  "event": {
+    "0": {
+      "background": "#ab21c3",
+      "foreground": "#ca31c2"
+    },
+    "1": {
+      "background": "#da31c3",
+      "foreground": "#ef31c2"
+    }
+  }
+}

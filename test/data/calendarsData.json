@@ -1,0 +1,72 @@
+{
+  "kind": "calendar#calendarList",
+  "etag": "etag",
+  "nextPageToken": "nextPageToken",
+  "nextSyncToken": "nextSyncToken",
+  "items": [
+    {
+      "kind": "calendar#calendarListEntry",
+      "etag": "etag1",
+      "id": "id1",
+      "summary": "summary1",
+      "description": "description1",
+      "location": "location1",
+      "timeZone": "timezone1",
+      "summaryOverride": "summaryOverride1",
+      "colorId": "0",
+      "backgroundColor": "#f83a22",
+      "foregroundColor": "#f21b32",
+      "hidden": false,
+      "selected": true,
+      "accessRole": "owner",
+      "defaultReminders": [
+        {
+          "method": "email",
+          "minutes": 15
+        }
+      ],
+      "notificationSettings": {
+        "notifications": [
+          {
+            "type": "eventCreation",
+            "method": "email"
+          }
+        ]
+      },
+      "primary": true,
+      "deleted": false
+    },
+    {
+      "kind": "calendar#calendarListEntry",
+      "etag": "etag2",
+      "id": "id2",
+      "summary": "summary2",
+      "description": "description2",
+      "location": "location2",
+      "timeZone": "timezone2",
+      "summaryOverride": "summaryOverride2",
+      "colorId": "1",
+      "backgroundColor": "#ac32d2",
+      "foregroundColor": "#ba2521",
+      "hidden": false,
+      "selected": false,
+      "accessRole": "reader",
+      "defaultReminders": [
+        {
+          "method": "email",
+          "minutes": 15
+        }
+      ],
+      "notificationSettings": {
+        "notifications": [
+         {
+            "type": "eventCreation",
+            "method": "email"
+          }
+        ]
+      },
+      "primary": false,
+      "deleted": false
+    }  
+  ]
+}

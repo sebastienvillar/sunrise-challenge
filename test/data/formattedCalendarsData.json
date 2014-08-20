@@ -1,0 +1,18 @@
+[
+  {
+    "id": "id1",
+    "title": "summary1",
+    "color": "ab21c3",
+    "writable": true,
+    "selected": true,
+    "timezone": "timezone1"
+  },
+  {
+    "id": "id2",
+    "title": "summary2",
+    "color": "da31c3",
+    "writable": false,
+    "selected": false,
+    "timezone": "timezone2"
+  }
+]
