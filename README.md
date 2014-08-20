@@ -17,7 +17,7 @@ To run
     git clone git@github.com:sebastienvillar/sunrise-challenge.git
     cd sunrise-challenge
     mkdir config
-    cd config
+    cd config/src
     
 Add a file with your configuration:
 
