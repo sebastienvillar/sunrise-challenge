@@ -29,6 +29,10 @@ Add a file with your configuration:
 	    }
 	  }
 	  
+And then
+
+     node app.js
+	  
 Notes
 -----
 
